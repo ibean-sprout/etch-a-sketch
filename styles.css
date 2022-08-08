@@ -13,17 +13,23 @@
 
 }
 
-/* .btn {
-    margin: 20px 100px 100px 30px;
+.grid-item {
+    border: solid black .2px;
+
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 20px 0 20px 0;
     background-color: black;
     color: white;
     font-size: 30px;
     border-radius: 10px;
     padding: 20px;
-
-} */
-.grid-item {
-    border: solid black .2px;
-    gap: 0;
 
 }

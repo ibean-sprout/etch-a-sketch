@@ -1,9 +1,11 @@
 //add a prompt to the 'Click me' button
-// let num
-// const buttonPrompt = document.querySelector('.btn').addEventListener('click', () => {
-//     num = Number(prompt('How many squares per side?')); 
-//     // createDivs()
-// });
+let row_num = 0;
+let col_num = 0;
+const buttonPrompt = document.querySelector('.btn').addEventListener('click', () => {
+    row_num = Number(prompt('How many rows?')); 
+    col_num = Number(prompt('How many columns?'));
+    createDiv(row_num, col_num)
+});
 
 
 
@@ -28,26 +30,12 @@ const container = document.querySelector('#container');
     }
     
  }
-createDiv(64, 64);
+//createDiv(64, 64);
+//referehce for div creation: https://stackoverflow.com/questions/57550082/creating-a-16x16-grid-using-javascript
 
-
+//create function to change div colors when moused over
 function changeDivColor(div) {
     div.addEventListener('mouseover', () => {
         div.style.backgroundColor = 'lightblue';
     })
 }
-// function createDivs() {
-//     let container = document.querySelector('#container');
-//     for ( let i = 0; i < 256; i++) {
-//         let sketchDivs = document.createElement('div');
-//         sketchDivs.classList.add('content');
-//         sketchDivs.style.cssText = 'width: 50px; height: 50px; color: lightblue';
-//         sketchDivs.style.border = 'solid black .5px';
-//         container.appendChild(sketchDivs);
-
-//     }
-
-
-// }
-
-// createDivs();
