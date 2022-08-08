@@ -33,9 +33,16 @@ const container = document.querySelector('#container');
 //createDiv(64, 64);
 //referehce for div creation: https://stackoverflow.com/questions/57550082/creating-a-16x16-grid-using-javascript
 
+//create random colors to fill the divs
+function randomRGB() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`
+}
 //create function to change div colors when moused over
 function changeDivColor(div) {
     div.addEventListener('mouseover', () => {
-        div.style.backgroundColor = 'lightblue';
+        div.style.backgroundColor = randomRGB();
     })
 }
