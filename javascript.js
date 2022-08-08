@@ -1,57 +1,53 @@
+//add a prompt to the 'Click me' button
+// let num
+// const buttonPrompt = document.querySelector('.btn').addEventListener('click', () => {
+//     num = Number(prompt('How many squares per side?')); 
+//     // createDivs()
+// });
+
+
+
+
 //create 16X16 squares of divs
-let container = document.querySelector('#container');
-let sketchDivs; 
+const container = document.querySelector('#container');
 
-function createDivs() {
+ //create one row of any number
+ function createDiv(rows, column) {
     
-    for ( let i = 0; i < 256; i++) {
-        sketchDivs = document.createElement('div');
-        sketchDivs.classList.add('content');
-        sketchDivs.style.cssText = 'width: 50px; height: 50px; color: lightblue';
-        sketchDivs.style.border = 'solid black .5px';
-        container.appendChild(sketchDivs);
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-cols', column);
+    
+    for (let r = 0; r < (rows * column); r++) {
+        let sketchDivs = document.createElement('div');
+        // sketchDivs.setAttribute('style', `grid-template-rows: repeat(${row})`);
+        // sketchDivs.setAttribute('style', `grid-template-columns: repeat(${column})`);
+        container.appendChild(sketchDivs).className = 'grid-item';
 
-        //creating a function with the parameter set made the hover effect stick
         changeDivColor(sketchDivs);
+
     }
     
+ }
+createDiv(64, 64);
 
 
-}
-
-createDivs();
-
-//create hover/pixel effect
 function changeDivColor(div) {
     div.addEventListener('mouseover', () => {
         div.style.backgroundColor = 'lightblue';
     })
 }
+// function createDivs() {
+//     let container = document.querySelector('#container');
+//     for ( let i = 0; i < 256; i++) {
+//         let sketchDivs = document.createElement('div');
+//         sketchDivs.classList.add('content');
+//         sketchDivs.style.cssText = 'width: 50px; height: 50px; color: lightblue';
+//         sketchDivs.style.border = 'solid black .5px';
+//         container.appendChild(sketchDivs);
 
-// let changeDivColors = document.getElementsByClassName('content');
-// // console.log(changeDivColors);
-
-// for (let i = 0; i < changeDivColors.length; i++) {
-//     changeDivColors[i].addEventListener('mouseover', () => {
-//         sketchDivs.style.backgroundColor = 'lightblue';
-// });
-// }
-//         // color.addEventListener('mouseleave', () => {
-//         //     sketchDivs.style.backgroundColor = 'red';
-//         // })
-// })
+//     }
 
 
-// function createPixels() {
-//         let pixels = sketchDivs.addEventListener('mouseover', () => {
- //   sketchDivs.style.backgroundColor = 'lightblue';
-//     })
-//     pixels.addEventListener('mouseleave', () => {
-//         sketchDivs.style.backgroundColor = 'lightblue';
-//     })
 // }
 
-
-//let sixteenDivs = createDivs * 16;
-
-//create pixelated effect with hover
+// createDivs();
