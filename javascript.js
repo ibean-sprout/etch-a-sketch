@@ -4,6 +4,13 @@ let col_num = 0;
 const buttonPrompt = document.querySelector('.btn').addEventListener('click', () => {
     row_num = Number(prompt('How many rows?')); 
     col_num = Number(prompt('How many columns?'));
+        if (row_num === undefined || row_num === 0) {
+            row_num = 16;
+        }
+    
+        if (col_num === undefined || col_num === 0) {
+            col_num = 16;
+        }
     createDiv(row_num, col_num)
 });
 
@@ -35,10 +42,21 @@ const container = document.querySelector('#container');
 
 //create random colors to fill the divs
 function randomRGB() {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-    return `rgb(${r}, ${g}, ${b})`
+    // let rgb;
+    // let reset = 9;
+    // for (let i = 0; i < 10; i++) {
+    //     if(i === 8) {
+    //         alert(`i is equal to ${i}`)
+    //         rgb = 'rgb(0, 0, 0)'
+    //     } else {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        rgb =`rgb(${r}, ${g}, ${b})`
+    //     }
+    // }
+    return rgb
+    
 }
 //create function to change div colors when moused over
 function changeDivColor(div) {
